@@ -2,6 +2,9 @@
 An intro ML project using unsupervised Machine Learning to cluster restaurants based on geographic location.
 
 
+I chose to work on this project because it integrated two areas I previously had worked with disparately but never together: geospatial analytics and unsupervised machine learning. Selecting the optimal quantity of clusters and tuning hyperparameters is an imprecise science that requires both intuition and integration of statistical theories like the bias-variance tradeoff. Given I had an upcoming project integrating these two areas of data science together, this provided an opportunity to refresh these skills and utilize them together in a new way.
+
+
 Who is this project for?
 ------------------------
 - Beginner data scientists looking to familiarize themselves with basic clustering 
@@ -11,10 +14,11 @@ Who is this project for?
 
 Usage
 ------------------------
+- Download the [Kaggle file](https://www.kaggle.com/uciml/restaurant-data-with-consumer-ratings)
 - Read the input data files (`geoplaces2.csv`,`chefmozaccepts.csv`,`chefmozcuisine.csv`,`chefmozhours4.csv`,`chefmozparking.csv`) into your environment
 - Familiarize yourself with the below data dictionary
 - Follow the steps to read in data and perform basic cleaning in `restaurants_cleaning.py`
-- _Note: geopandas can provide some issues with downloading (I have a Windows, pip env for Python 3.7) because of the fiona library dependency. What worked for me was downloading the proper version of fiona's depdency GDAL https://www.lfd.uci.edu/~gohlke/pythonlibs/#gdal, download the proper version of fiona https://www.lfd.uci.edu/~gohlke/pythonlibs/#fiona, then pip install geopandas_
+- _Note: geopandas can prove challenging to download (I have a Windows, pip env for Python 3.7) primarily due to the fiona library dependency. What worked for me was downloading the proper version of fiona's dependency [GDAL](https://www.lfd.uci.edu/~gohlke/pythonlibs/#gdal), downloading the proper version of [fiona](https://www.lfd.uci.edu/~gohlke/pythonlibs/#fiona), then pip install geopandas_
 - Execute the modeling code in `restaurants_modeling.py`
 
 
@@ -49,4 +53,6 @@ Data Dictionary
 
 Project Applications:
 ------------------------
-
+- The contents of this dataset are very interesting; however, only a limited amount of the data contains coordinates. This project might benefit from focusing more narrowly on the larger restaurant and review data without the geospatial component.
+- Similarly, the geospatial clustering aspect could be applied to a more robust dataset with more records containing latitude and longitude values. Other datasets with a locational component, including even other retail spaces that might have address or location data could provide more useful for this use case. Given the free and somewhat cleaned nature of this data, however, another project might require scraping or more challenges to prepare.
+- Expanding the data to add more restaurants with the same fields would provide a larger body of data to analyze. Because only a handful of Mexican cities had locational data, expanding the data to include more cities and cuisines would heed to not only more robust clusters but also more usable insights from the research.
